@@ -47,7 +47,8 @@ jobs:
         with:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
-          key: ${{ secrets.SSH_KEY }}
+          key: ${{ secrets.SSH_KEY_MAC }}
+          passphrase: ${{ secrets.PASSPHRASE }}
           script: |
             sudo docker pull talizaveta/infra
             sudo docker stop $(sudo docker ps -a -q)
